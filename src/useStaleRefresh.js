@@ -22,7 +22,7 @@ export default function useStaleRefresh(url, defaultValue = []) {
   // fetch new data
   fetch(url)
     .then(res => res.json())
-    .then(data => {
+    .then(newData => {
       CACHE[cacheID] = newData;
       setData(newData);
       setIsLoading(false);
